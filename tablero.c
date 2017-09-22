@@ -1,32 +1,41 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
-void iniciarTablero(char **tablero){
-    int ind, indY;
-    tablero[0][0]="Tb1";
-    tablero[1][0]="Cb1";
-    tablero[2][0]="Ab1";
+char*** iniciarTablero(){
+    short ind, indY;
+    char ***tablero;
+    tablero=(char***)malloc(8*sizeof(char**));
+    for(ind=0;ind<8;ind++){
+        tablero[ind]=(char**)malloc(8*sizeof(char*));
+        for(indY=0;indY<8;indY++)
+            tablero[ind][indY]=(char*)malloc(4*sizeof(char));
+    }
+    tablero[0][0]="Tb";
+    tablero[1][0]="Cb";
+    tablero[2][0]="Ab";
     tablero[3][0]="Qb";
     tablero[4][0]="Kb";
-    tablero[5][0]="Ab2";
-    tablero[6][0]="Cb2";
-    tablero[7][0]="Tb2";
+    tablero[5][0]="Ab";
+    tablero[6][0]="Cb";
+    tablero[7][0]="Tb";
     for(ind=0;ind<8;ind++){
-        strcpy(tablero[ind][1],strcat("Pb",(ind+1));
+        strcpy(tablero[ind][1],"Pb");
     }
-    tablero[0][7]="Tn2";
-    tablero[1][7]="Cn2";
-    tablero[2][7]="An2";
+    tablero[0][7]="Tn";
+    tablero[1][7]="Cn";
+    tablero[2][7]="An";
     tablero[3][7]="Qn";
     tablero[4][7]="Kn";
-    tablero[5][7]="An1";
-    tablero[6][7]="Cn1";
-    tablero[7][7]="Tn1";
+    tablero[5][7]="An";
+    tablero[6][7]="Cn";
+    tablero[7][7]="Tn";
     for(ind=0;ind<8;ind++){
-        strcpy(tablero[ind][6],strcat("Pn",(8-ind));
+        strcpy(tablero[ind][6],"Pn");
     }
-    for(indY=2;indY<=5;ind++){
-        for(ind=0;ind<=7,ind++){
+    for(indY=2;indY<=5;indY++){
+        for(ind=0;ind<=7;ind++){
             strcpy(tablero[ind][indY],"   ");
         }
     }
+    return tablero;
 }
