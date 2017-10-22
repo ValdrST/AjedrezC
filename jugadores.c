@@ -1,10 +1,10 @@
-#include <ctype.h>
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+#include "partida.h"
 #include <stdio.h>
-#include <string.h>
-
-#include "jugadores.h"
-#include "pilaMovimiento.h"
-
 void getDatos(JUGADORES *jugador, char *color)
 {
     printf("\nJugador %s cual es tu nombre?_", color);

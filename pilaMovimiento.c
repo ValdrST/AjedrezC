@@ -1,12 +1,13 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
-#include <math.h>
+#include <stdlib.h>
+#include "partida.h"
 #include "pilaMovimiento.h"
-#include "jugadores.h"
-
-
 void RecibirMovimiento(JUGADORES *jugador,char ***tablero)
 {
     int xi,yi, xf, yf, flag=0;
@@ -27,7 +28,7 @@ void RecibirMovimiento(JUGADORES *jugador,char ***tablero)
 
             printf("\n%c%c%s -> %c%c%s",movimiento[0],movimiento[1],tablero[xi][yi], movimiento[3],movimiento[4],tablero[xf][yf]);
             strcpy(tablero[xf][yf],tablero[xi][yi]);
-            strcpy(tablero[xi][yi],"   ");
+            strcpy(tablero[xi][yi],"  ");
             flag=0;
         }
         else
@@ -44,7 +45,6 @@ void RecibirMovimiento(JUGADORES *jugador,char ***tablero)
     mov->tipoPieza[0]=tablero[xf][yf][0];
     mov->tipoPieza[1]=tablero[xf][yf][1];
     mov->tipoPieza[2]=tablero[xf][yf][2];
-    mov->siguiente=jugador->movimientos;
     jugador->movimientos=mov;
 }
 

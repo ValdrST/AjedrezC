@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -34,8 +39,18 @@ char*** iniciarTablero(){
     }
     for(indY=2;indY<=5;indY++){
         for(ind=0;ind<=7;ind++){
-            strcpy(tablero[ind][indY],"   ");
+            strcpy(tablero[ind][indY],"  ");
         }
     }
     return tablero;
+}
+
+void imprimirTablero(char ***tablero){
+    int x, y;
+    for(y=0;y<8;y++){
+        for(x=0;x<8;x++){
+            printf(" %s ",tablero[x][y]);
+        }
+        printf("\n");
+    }
 }
